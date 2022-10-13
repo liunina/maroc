@@ -36,10 +36,8 @@ typedef enum MALineCapType MALineCapType;
 
     id<MCUserServiceProtocol> userService = MAROC(MCUserServiceProtocol);
     [userService wantToGoWorld:@"helloworld!"];
-
     id<MCTrackServiceProtocol> trackService = [[Maroc shareInstance] createService:@protocol(MCTrackServiceProtocol)];
     [trackService trackEvent:@"MCViewController!"];
-
     id<MCHomeServiceProtocol> homeService = [[Maroc shareInstance] createService:@protocol(MCHomeServiceProtocol)];
     [homeService run];
 
