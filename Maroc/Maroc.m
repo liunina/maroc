@@ -36,7 +36,6 @@
 }
 
 #pragma mark - Private
-
 - (void)setContext:(MCContext *)context {
     _context = context;
     static dispatch_once_t onceToken;
