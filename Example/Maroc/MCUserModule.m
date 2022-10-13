@@ -13,12 +13,12 @@
 #import <Maroc/MCCommon.h>
 #import <Maroc/Maroc.h>
 
-@interface MCUserModule () <MCModuleProtocol>
-@end
-
 @MarocMod(MCUserModule)
 
-    @implementation MCUserModule
+    @interface MCUserModule()<MCModuleProtocol>
+@end
+
+@implementation MCUserModule
 //MC_EXPORT_MODULE(NO
 
 - (void)modSetUp:(MCContext *)context {
