@@ -22,7 +22,6 @@ typedef enum MALineCapType MALineCapType;
 
 @interface MCViewController ()
 @property (nonatomic, strong) NSString *testName1;
-
 @property (nonatomic, strong) NSString *testName;
 @end
 
