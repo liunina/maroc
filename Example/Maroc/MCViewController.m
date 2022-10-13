@@ -22,6 +22,7 @@ typedef enum MALineCapType MALineCapType;
 
 @interface MCViewController ()
 @property (nonatomic, strong) NSString *testName1;
+
 @property (nonatomic, strong) NSString *testName;
 @end
 
@@ -50,6 +51,7 @@ typedef enum MALineCapType MALineCapType;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (void)doSome:(NSInteger)num hello:(NSString *)h {
     MALineCapType capType = kMALineCapButt;
     switch (capType) {
