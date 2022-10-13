@@ -13,13 +13,13 @@
 #import <Maroc/MCCommon.h>
 #import <Maroc/Maroc.h>
 
-@MarocMod(MCUserModule)
+@MarocMod(MCUserModule);
 
-    @interface MCUserModule()<MCModuleProtocol>
+@interface MCUserModule () <MCModuleProtocol>
 @end
 
 @implementation MCUserModule
-//MC_EXPORT_MODULE(NO
+// MC_EXPORT_MODULE(NO
 
 - (void)modSetUp:(MCContext *)context {
     MCLog(@"MCUserModule setup");
@@ -27,17 +27,18 @@
 
 - (void)modInit:(MCContext *)context {
     switch (context.env) {
-        case MCEnvironmentDev:
-            //....初始化开发环境
-            break;
-        case MCEnvironmentProd:
-            //....初始化生产环境
-        default:
-            break;
+    case MCEnvironmentDev:
+        //....初始化开发环境
+        break;
+    case MCEnvironmentProd:
+        //....初始化生产环境
+    default:
+        break;
     }
 
     //    MCRouter *router = [MCRouter routerForScheme:marocScheme];
-    //    [router addPathComponent:userPathComponentKey forClass:[MCUserService class] handler:^(NSDictionary<NSString *,id> *params) {
+    //    [router addPathComponent:userPathComponentKey forClass:[MCUserService class] handler:^(NSDictionary<NSString
+    //    *,id> *params) {
     //
     //    }];
 }

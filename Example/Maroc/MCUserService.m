@@ -9,9 +9,10 @@
 #import "MCUserService.h"
 #import <Maroc/Maroc.h>
 
-@MarocService(MCUserServiceProtocol, MCUserService)
+@MarocService(MCUserServiceProtocol, MCUserService);
 
-    @interface MCUserService()
+@interface MCUserService ()
+
 @end
 
 @implementation MCUserService
