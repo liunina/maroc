@@ -7,9 +7,9 @@
 //
 
 @import UIKit;
+@import Maroc;
 
-@interface MCAppDelegate : UIResponder <UIApplicationDelegate>
-
+@interface MCAppDelegate : MarocAppDelegate<UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 
 @end

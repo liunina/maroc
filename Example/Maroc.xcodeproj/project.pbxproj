@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F30CAD028F5A3490020F2EE /* MCTrackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F30CACF28F5A3490020F2EE /* MCTrackService.m */; };
+		1F30CAD828F5AABA0020F2EE /* MCHomeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F30CAD728F5AABA0020F2EE /* MCHomeModule.m */; };
+		1F30CADC28F5AB160020F2EE /* MCHomeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F30CADB28F5AB160020F2EE /* MCHomeService.m */; };
+		1F30CAE028F5AC5B0020F2EE /* HelloMaroc.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F30CADF28F5AC5B0020F2EE /* HelloMaroc.bundle */; };
+		1F56609728F64A0B00474EAB /* MCUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F56609628F64A0B00474EAB /* MCUserViewController.m */; };
+		1F56609B28F65A7700474EAB /* NSString+encode.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F56609A28F65A7700474EAB /* NSString+encode.m */; };
+		1F56609E28F6684B00474EAB /* MCOrderModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F56609D28F6684B00474EAB /* MCOrderModule.m */; };
+		1F5660A228F66AAD00474EAB /* MCOrderService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5660A128F66AAD00474EAB /* MCOrderService.m */; };
+		1F79071F28F58C550077F042 /* MCUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F79071E28F58C550077F042 /* MCUserService.m */; };
+		1F9729D028F5922B00BB3CF5 /* MCUserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9729CF28F5922B00BB3CF5 /* MCUserModule.m */; };
+		1F9729D328F5938800BB3CF5 /* MCTrackModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9729D228F5938800BB3CF5 /* MCTrackModule.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -38,9 +49,35 @@
 
 /* Begin PBXFileReference section */
 		0BA4C13E2FDBE22A0B514115 /* Pods-Maroc_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maroc_Tests.release.xcconfig"; path = "Target Support Files/Pods-Maroc_Tests/Pods-Maroc_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1F30CACE28F5A3490020F2EE /* MCTrackService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTrackService.h; sourceTree = "<group>"; };
+		1F30CACF28F5A3490020F2EE /* MCTrackService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTrackService.m; sourceTree = "<group>"; };
+		1F30CAD228F5A36C0020F2EE /* MCUserServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCUserServiceProtocol.h; sourceTree = "<group>"; };
+		1F30CAD328F5A3790020F2EE /* MCTrackServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTrackServiceProtocol.h; sourceTree = "<group>"; };
+		1F30CAD628F5AABA0020F2EE /* MCHomeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCHomeModule.h; sourceTree = "<group>"; };
+		1F30CAD728F5AABA0020F2EE /* MCHomeModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCHomeModule.m; sourceTree = "<group>"; };
+		1F30CAD928F5AB060020F2EE /* MCHomeServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCHomeServiceProtocol.h; sourceTree = "<group>"; };
+		1F30CADA28F5AB160020F2EE /* MCHomeService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCHomeService.h; sourceTree = "<group>"; };
+		1F30CADB28F5AB160020F2EE /* MCHomeService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCHomeService.m; sourceTree = "<group>"; };
+		1F30CADF28F5AC5B0020F2EE /* HelloMaroc.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HelloMaroc.bundle; sourceTree = "<group>"; };
+		1F56609528F64A0B00474EAB /* MCUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCUserViewController.h; sourceTree = "<group>"; };
+		1F56609628F64A0B00474EAB /* MCUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCUserViewController.m; sourceTree = "<group>"; };
+		1F56609828F64B7A00474EAB /* Consts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
+		1F56609928F65A7700474EAB /* NSString+encode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+encode.h"; sourceTree = "<group>"; };
+		1F56609A28F65A7700474EAB /* NSString+encode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+encode.m"; sourceTree = "<group>"; };
+		1F56609C28F6684B00474EAB /* MCOrderModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOrderModule.h; sourceTree = "<group>"; };
+		1F56609D28F6684B00474EAB /* MCOrderModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCOrderModule.m; sourceTree = "<group>"; };
+		1F56609F28F66A4200474EAB /* MCOrderServiceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOrderServiceProtocol.h; sourceTree = "<group>"; };
+		1F5660A028F66AAD00474EAB /* MCOrderService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCOrderService.h; sourceTree = "<group>"; };
+		1F5660A128F66AAD00474EAB /* MCOrderService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCOrderService.m; sourceTree = "<group>"; };
+		1F79071D28F58C550077F042 /* MCUserService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCUserService.h; sourceTree = "<group>"; };
+		1F79071E28F58C550077F042 /* MCUserService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCUserService.m; sourceTree = "<group>"; };
+		1F9729CE28F5922B00BB3CF5 /* MCUserModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCUserModule.h; sourceTree = "<group>"; };
+		1F9729CF28F5922B00BB3CF5 /* MCUserModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCUserModule.m; sourceTree = "<group>"; };
+		1F9729D128F5938800BB3CF5 /* MCTrackModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTrackModule.h; sourceTree = "<group>"; };
+		1F9729D228F5938800BB3CF5 /* MCTrackModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTrackModule.m; sourceTree = "<group>"; };
 		2241F6C609558DAF9AFA4AB8 /* Pods-Maroc_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maroc_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Maroc_Tests/Pods-Maroc_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2A2775618CA8EC91AA978A21 /* Pods_Maroc_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maroc_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3EA10B84BD73222C4099E77C /* Maroc.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Maroc.podspec; path = ../Maroc.podspec; sourceTree = "<group>"; };
+		3EA10B84BD73222C4099E77C /* Maroc.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Maroc.podspec; path = ../Maroc.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6003F58A195388D20070C39A /* Maroc_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maroc_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,8 +99,8 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9D9B3ABEB05D066BAE06E931 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		A39037ABA43FA4B02D8B333F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		9D9B3ABEB05D066BAE06E931 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A39037ABA43FA4B02D8B333F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A4AADC9E94B00A6F005B58F5 /* Pods-Maroc_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maroc_Example.debug.xcconfig"; path = "Target Support Files/Pods-Maroc_Example/Pods-Maroc_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DABA893609209CA68227E8EE /* Pods-Maroc_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maroc_Example.release.xcconfig"; path = "Target Support Files/Pods-Maroc_Example/Pods-Maroc_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EEF306012BA2E48539DCF7D0 /* Pods_Maroc_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maroc_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +132,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F30CAD128F5A3520020F2EE /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1F30CAD228F5A36C0020F2EE /* MCUserServiceProtocol.h */,
+				1F30CAD328F5A3790020F2EE /* MCTrackServiceProtocol.h */,
+				1F30CAD928F5AB060020F2EE /* MCHomeServiceProtocol.h */,
+				1F56609F28F66A4200474EAB /* MCOrderServiceProtocol.h */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		1F56609428F649F000474EAB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6003F5A5195388D20070C39A /* MCViewController.h */,
+				6003F5A6195388D20070C39A /* MCViewController.m */,
+				1F56609528F64A0B00474EAB /* MCUserViewController.h */,
+				1F56609628F64A0B00474EAB /* MCUserViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1F79071C28F58C2A0077F042 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1F79071D28F58C550077F042 /* MCUserService.h */,
+				1F79071E28F58C550077F042 /* MCUserService.m */,
+				1F30CACE28F5A3490020F2EE /* MCTrackService.h */,
+				1F30CACF28F5A3490020F2EE /* MCTrackService.m */,
+				1F30CADA28F5AB160020F2EE /* MCHomeService.h */,
+				1F30CADB28F5AB160020F2EE /* MCHomeService.m */,
+				1F5660A028F66AAD00474EAB /* MCOrderService.h */,
+				1F5660A128F66AAD00474EAB /* MCOrderService.m */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		1F9729CD28F5921300BB3CF5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				1F9729CE28F5922B00BB3CF5 /* MCUserModule.h */,
+				1F9729CF28F5922B00BB3CF5 /* MCUserModule.m */,
+				1F9729D128F5938800BB3CF5 /* MCTrackModule.h */,
+				1F9729D228F5938800BB3CF5 /* MCTrackModule.m */,
+				1F30CAD628F5AABA0020F2EE /* MCHomeModule.h */,
+				1F30CAD728F5AABA0020F2EE /* MCHomeModule.m */,
+				1F56609C28F6684B00474EAB /* MCOrderModule.h */,
+				1F56609D28F6684B00474EAB /* MCOrderModule.m */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -134,9 +223,15 @@
 			children = (
 				6003F59C195388D20070C39A /* MCAppDelegate.h */,
 				6003F59D195388D20070C39A /* MCAppDelegate.m */,
+				1F56609828F64B7A00474EAB /* Consts.h */,
+				1F56609928F65A7700474EAB /* NSString+encode.h */,
+				1F56609A28F65A7700474EAB /* NSString+encode.m */,
+				1F30CAD128F5A3520020F2EE /* Protocol */,
+				1F9729CD28F5921300BB3CF5 /* Modules */,
+				1F79071C28F58C2A0077F042 /* Services */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* MCViewController.h */,
-				6003F5A6195388D20070C39A /* MCViewController.m */,
+				1F56609428F649F000474EAB /* ViewControllers */,
+				1F30CADF28F5AC5B0020F2EE /* HelloMaroc.bundle */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -193,7 +288,6 @@
 				2241F6C609558DAF9AFA4AB8 /* Pods-Maroc_Tests.debug.xcconfig */,
 				0BA4C13E2FDBE22A0B514115 /* Pods-Maroc_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +302,7 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				7ECAAE0FBBA3E6560D4C665D /* [CP] Embed Pods Frameworks */,
+				3582033FA7853A077FEFDFE3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -246,7 +340,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MC;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = liunina;
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
@@ -256,7 +350,7 @@
 			};
 			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "Maroc" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -279,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				1F30CAE028F5AC5B0020F2EE /* HelloMaroc.bundle in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
@@ -318,6 +413,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3582033FA7853A077FEFDFE3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Maroc_Example/Pods-Maroc_Example-resources.sh",
+				"${PODS_ROOT}/../../Maroc/Maroc.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Maroc.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Maroc_Example/Pods-Maroc_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		640CEE8BE40777EA0C67030E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,24 +451,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7ECAAE0FBBA3E6560D4C665D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Maroc_Example/Pods-Maroc_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Maroc/Maroc.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Maroc.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Maroc_Example/Pods-Maroc_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC6BE65106CC0E4B5F6C2A06 /* [CP] Embed Pods Frameworks */ = {
@@ -389,8 +484,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F5660A228F66AAD00474EAB /* MCOrderService.m in Sources */,
+				1F30CADC28F5AB160020F2EE /* MCHomeService.m in Sources */,
+				1F30CAD828F5AABA0020F2EE /* MCHomeModule.m in Sources */,
 				6003F59E195388D20070C39A /* MCAppDelegate.m in Sources */,
+				1F56609B28F65A7700474EAB /* NSString+encode.m in Sources */,
+				1F56609728F64A0B00474EAB /* MCUserViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* MCViewController.m in Sources */,
+				1F9729D028F5922B00BB3CF5 /* MCUserModule.m in Sources */,
+				1F9729D328F5938800BB3CF5 /* MCTrackModule.m in Sources */,
+				1F56609E28F6684B00474EAB /* MCOrderModule.m in Sources */,
+				1F79071F28F58C550077F042 /* MCUserService.m in Sources */,
+				1F30CAD028F5A3490020F2EE /* MCTrackService.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,23 +550,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -474,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -485,29 +605,44 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
