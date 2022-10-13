@@ -9,7 +9,7 @@
 @import UIKit;
 @import Maroc;
 
-@interface MCAppDelegate : MarocAppDelegate<UIApplicationDelegate>
+@interface MCAppDelegate : MarocAppDelegate <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 
 @end

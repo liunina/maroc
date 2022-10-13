@@ -1,12 +1,16 @@
-#import <Foundation/Foundation.h>
 #import "MCAnnotation.h"
+#import <Foundation/Foundation.h>
 
 @class MCContext;
 @class Maroc;
 
-#define MC_EXPORT_MODULE(isAsync) \
-+ (void)load { [Maroc registerDynamicModule:[self class]]; } \
-- (BOOL)async { return [[NSString stringWithUTF8String:#isAsync] boolValue];}
+#define MC_EXPORT_MODULE(isAsync)                                    \
+    +(void) load {                                                   \
+        [Maroc registerDynamicModule:[self class]];                  \
+    }                                                                \
+    -(BOOL) async {                                                  \
+        return [[NSString stringWithUTF8String:#isAsync] boolValue]; \
+    }
 
 @protocol MCModuleProtocol <NSObject>
 

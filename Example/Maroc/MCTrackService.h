@@ -6,12 +6,12 @@
 //  Copyright © 2022 liunina. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "MCTrackServiceProtocol.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MCTrackService : NSObject<MCTrackServiceProtocol>
+@interface MCTrackService : NSObject <MCTrackServiceProtocol>
 
 @end
 

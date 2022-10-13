@@ -15,8 +15,8 @@
 }
 
 - (BOOL)trackEvent:(nonnull NSString *)eventName {
-    NSLog(@"执行:trackEvent:%@",eventName);
-    
+    NSLog(@"执行:trackEvent:%@", eventName);
+
     return YES;
 }
 

@@ -6,12 +6,12 @@
 //  Copyright © 2022 liunina. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "MCUserServiceProtocol.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MCUserService : NSObject<MCUserServiceProtocol>
+@interface MCUserService : NSObject <MCUserServiceProtocol>
 
 @end
 

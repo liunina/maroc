@@ -9,8 +9,9 @@
 #import "MCOrderModule.h"
 #import <Maroc/Maroc.h>
 
-@interface MCOrderModule ()<MCModuleProtocol>
+@interface MCOrderModule () <MCModuleProtocol>
 @end
+
 @implementation MCOrderModule
 
 - (void)modSetUp:(MCContext *)context {
@@ -18,6 +19,5 @@
 }
 
 - (void)modInit:(MCContext *)context {
-    
 }
 @end

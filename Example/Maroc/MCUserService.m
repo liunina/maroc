@@ -9,9 +9,11 @@
 #import "MCUserService.h"
 #import <Maroc/Maroc.h>
 
-@MarocService(MCUserServiceProtocol,MCUserService)
-@interface MCUserService ()
+@MarocService(MCUserServiceProtocol, MCUserService)
+
+    @interface MCUserService()
 @end
+
 @implementation MCUserService
 
 - (void)wantToGoWorld:(NSString *)world {

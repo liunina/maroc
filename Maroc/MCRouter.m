@@ -1,11 +1,11 @@
-#import "MCRouter.h"
-#import <UIKit/UIKit.h>
-#import <objc/runtime.h>
-#import "MCModuleProtocol.h"
-#import "MCServiceProtocol.h"
 #import "MCCommon.h"
 #import "MCModuleManager.h"
+#import "MCModuleProtocol.h"
+#import "MCRouter.h"
 #import "MCServiceManager.h"
+#import "MCServiceProtocol.h"
+#import <UIKit/UIKit.h>
+#import <objc/runtime.h>
 
 @interface NSObject (MCRetType)
 
@@ -18,8 +18,8 @@
 + (id)bh_getReturnFromInv:(NSInvocation *)inv withSig:(NSMethodSignature *)sig {
     NSUInteger length = [sig methodReturnLength];
     if (length == 0) return nil;
-    
-    char *type = (char *)[sig methodReturnType];
+
+    char *type = (char *) [sig methodReturnType];
     while (*type == 'r' || // const
            *type == 'n' || // in
            *type == 'N' || // inout
@@ -27,49 +27,63 @@
            *type == 'O' || // bycopy
            *type == 'R' || // byref
            *type == 'V') { // oneway
-        type++; // cutoff useless prefix
+        type++;            // cutoff useless prefix
     }
-    
+
 #define return_with_number(_type_) \
-do { \
-_type_ ret; \
-[inv getReturnValue:&ret]; \
-return @(ret); \
-} while (0)
-    
+    do {                           \
+        _type_ ret;                \
+        [inv getReturnValue:&ret]; \
+        return @(ret);             \
+    } while (0)
+
     switch (*type) {
-        case 'v': return nil; // void
-        case 'B': return_with_number(bool);
-        case 'c': return_with_number(char);
-        case 'C': return_with_number(unsigned char);
-        case 's': return_with_number(short);
-        case 'S': return_with_number(unsigned short);
-        case 'i': return_with_number(int);
-        case 'I': return_with_number(unsigned int);
-        case 'l': return_with_number(int);
-        case 'L': return_with_number(unsigned int);
-        case 'q': return_with_number(long long);
-        case 'Q': return_with_number(unsigned long long);
-        case 'f': return_with_number(float);
-        case 'd': return_with_number(double);
+        case 'v':
+            return nil; // void
+        case 'B':
+            return_with_number(bool);
+        case 'c':
+            return_with_number(char);
+        case 'C':
+            return_with_number(unsigned char);
+        case 's':
+            return_with_number(short);
+        case 'S':
+            return_with_number(unsigned short);
+        case 'i':
+            return_with_number(int);
+        case 'I':
+            return_with_number(unsigned int);
+        case 'l':
+            return_with_number(int);
+        case 'L':
+            return_with_number(unsigned int);
+        case 'q':
+            return_with_number(long long);
+        case 'Q':
+            return_with_number(unsigned long long);
+        case 'f':
+            return_with_number(float);
+        case 'd':
+            return_with_number(double);
         case 'D': { // long double
             long double ret;
             [inv getReturnValue:&ret];
             return [NSNumber numberWithDouble:ret];
         };
-            
+
         case '@': { // id
             id ret = nil;
             [inv getReturnValue:&ret];
             return ret;
         };
-            
+
         case '#': { // Class
             Class ret = nil;
             [inv getReturnValue:&ret];
             return ret;
         };
-            
+
         default: { // struct / union / SEL / void* / unknown
             const char *objCType = [sig methodReturnType];
             char *buf = calloc(1, length);
@@ -113,6 +127,7 @@ static NSMutableDictionary<NSString *, MCRouter *> *routerByScheme = nil;
 @end
 
 static NSString *MCRURLGlobalScheme = nil;
+
 @interface MCRouter ()
 @property (nonatomic, strong) NSMutableDictionary<NSString *, MCRPathComponent *> *pathComponentByKey;
 @property (nonatomic, copy) NSString *scheme;
@@ -151,13 +166,13 @@ static NSString *MCRURLGlobalScheme = nil;
     if (!scheme.length) {
         return nil;
     }
-    
+
     MCRouter *router = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         routerByScheme = @{}.mutableCopy;
     });
-    
+
     if (!routerByScheme[scheme]) {
         router = [[self alloc] init];
         router.scheme = scheme;
@@ -165,7 +180,7 @@ static NSString *MCRURLGlobalScheme = nil;
     } else {
         router = [routerByScheme objectForKey:scheme];
     }
-    
+
     return router;
 }
 
@@ -207,21 +222,21 @@ static NSString *MCRURLGlobalScheme = nil;
     if (!scheme.length) {
         return NO;
     }
-    
+
     NSString *host = URL.host;
     MCRUsage usage = [self usage:host];
     if (usage == MCRUsageUnknown) {
         return NO;
     }
-    
+
     MCRouter *router = [self routerForScheme:scheme];
-    
+
     NSArray<NSString *> *pathComponents = URL.pathComponents;
-    
+
     __block BOOL flag = YES;
-    
-    [pathComponents enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        NSArray<NSString *> * subPaths = [obj componentsSeparatedByString:MCRURLSubPathSplitPattern];
+
+    [pathComponents enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        NSArray<NSString *> *subPaths = [obj componentsSeparatedByString:MCRURLSubPathSplitPattern];
         if (!subPaths.count) {
             flag = NO;
             *stop = NO;
@@ -257,7 +272,7 @@ static NSString *MCRURLGlobalScheme = nil;
                     flag = NO;
                     *stop = NO;
                     return;
-                }else {
+                } else {
                     flag = YES;
                 }
             } break;
@@ -282,16 +297,16 @@ static NSString *MCRURLGlobalScheme = nil;
                 if (!protocol || ![mClass conformsToProtocol:protocol]) {
                     flag = NO;
                     *stop = NO;
-                }else {
+                } else {
                     flag = YES;
                 }
             } break;
-                
+
             default:
                 break;
         }
     }];
-    
+
     return flag;
 }
 
@@ -306,35 +321,34 @@ static NSString *MCRURLGlobalScheme = nil;
 
 + (BOOL)openURL:(NSURL *)URL
      withParams:(NSDictionary<NSString *, NSDictionary<NSString *, id> *> *)params
-        andThen:(void(^)(NSString *pathComponentKey, id obj, id returnValue))then {
+        andThen:(void (^)(NSString *pathComponentKey, id obj, id returnValue))then {
     if (![self canOpenURL:URL]) {
         return NO;
     }
-    
+
     NSString *scheme = URL.scheme;
     MCRouter *router = [self routerForScheme:scheme];
-    
+
     NSString *host = URL.host;
     MCRUsage usage = [self usage:host];
-    
+
     MCRViewControlerEnterMode defaultMode = MCRViewControlerEnterModePush;
     if (URL.fragment.length) {
         defaultMode = [self viewControllerEnterMode:URL.fragment];
     }
-    
-    
+
     NSDictionary<NSString *, NSString *> *queryDic = [self queryDicFromURL:URL];
     NSString *paramsJson = [queryDic objectForKey:MCRURLQueryParamsKey];
     NSDictionary<NSString *, NSDictionary<NSString *, id> *> *allURLParams = [self paramsFromJson:paramsJson];
-    
+
     NSArray<NSString *> *pathComponents = URL.pathComponents;
-    
-    [pathComponents enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+
+    [pathComponents enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
         if (![obj isEqualToString:@"/"]) {
-            
-            NSArray<NSString *> * subPaths = [obj componentsSeparatedByString:MCRURLSubPathSplitPattern];
+
+            NSArray<NSString *> *subPaths = [obj componentsSeparatedByString:MCRURLSubPathSplitPattern];
             NSString *pathComponentKey = subPaths.firstObject;
-            
+
             Class mClass;
             MCRPathComponentCustomHandler handler;
             MCRPathComponent *pathComponent = [router.pathComponentByKey objectForKey:pathComponentKey];
@@ -344,7 +358,7 @@ static NSString *MCRURLGlobalScheme = nil;
             } else {
                 mClass = NSClassFromString(pathComponentKey);
             }
-            
+
             NSDictionary<NSString *, id> *URLParams = [allURLParams objectForKey:pathComponentKey];
             NSDictionary<NSString *, id> *funcParams = [params objectForKey:pathComponentKey];
             NSDictionary<NSString *, id> *finalParams = [self solveURLParams:URLParams withFuncParams:funcParams forClass:usage == MCRUsageCallService ? nil : mClass];
@@ -354,10 +368,10 @@ static NSString *MCRURLGlobalScheme = nil;
             if (subPaths.count >= 2) {
                 protocolStr = subPaths[1];
                 protocol = NSProtocolFromString(protocolStr);
-            }else {
+            } else {
                 return;
             }
-            
+
             if (handler) {
                 SEL selector = NULL;
                 if (subPaths.count > 2) {
@@ -367,10 +381,10 @@ static NSString *MCRURLGlobalScheme = nil;
                 handler(protocol, selector, finalParams);
                 return;
             }
-            
+
             id obj;
             id returnValue;
-            
+
             switch (usage) {
                 case MCRUsageCallService: {
                     NSString *selectorStr = subPaths[2];
@@ -383,7 +397,7 @@ static NSString *MCRURLGlobalScheme = nil;
                     if (subPaths.count >= 3) {
                         enterMode = [self viewControllerEnterMode:subPaths[2]];
                     }
-                    
+
                     if ([mClass conformsToProtocol:@protocol(MCServiceProtocol)] && protocol) {
                         obj = [[MCServiceManager sharedManager] createService:protocol];
                     } else {
@@ -391,7 +405,7 @@ static NSString *MCRURLGlobalScheme = nil;
                     }
                     [obj setObject:obj forKey:finalParams];
                     BOOL isLast = pathComponents.count - 1 ? YES : NO;
-                    [self solveJumpWithViewController:(UIViewController *)obj andJumpMode:enterMode shouldAnimate:isLast];
+                    [self solveJumpWithViewController:(UIViewController *) obj andJumpMode:enterMode shouldAnimate:isLast];
                 } break;
                 case MCRUsageRegister: {
                     if ([mClass conformsToProtocol:@protocol(MCModuleProtocol)]) {
@@ -400,14 +414,14 @@ static NSString *MCRURLGlobalScheme = nil;
                         [[MCServiceManager sharedManager] registerService:protocol implClass:mClass];
                     }
                 } break;
-                    
+
                 default:
                     break;
             }
-            !then?:then(pathComponentKey, obj, returnValue);
+            !then ?: then(pathComponentKey, obj, returnValue);
         }
     }];
-    
+
     return YES;
 }
 
@@ -436,21 +450,21 @@ static NSString *MCRURLGlobalScheme = nil;
 
 + (UIViewController *)currentViewController {
     UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
+
     while (viewController) {
         if ([viewController isKindOfClass:[UITabBarController class]]) {
-            UITabBarController *tbvc = (UITabBarController*)viewController;
+            UITabBarController *tbvc = (UITabBarController *) viewController;
             viewController = tbvc.selectedViewController;
         } else if ([viewController isKindOfClass:[UINavigationController class]]) {
-            UINavigationController *nvc = (UINavigationController*)viewController;
+            UINavigationController *nvc = (UINavigationController *) viewController;
             viewController = nvc.topViewController;
         } else if (viewController.presentedViewController) {
             viewController = viewController.presentedViewController;
         } else if ([viewController isKindOfClass:[UISplitViewController class]] &&
-                   ((UISplitViewController *)viewController).viewControllers.count > 0) {
-            UISplitViewController *svc = (UISplitViewController *)viewController;
+                   ((UISplitViewController *) viewController).viewControllers.count > 0) {
+            UISplitViewController *svc = (UISplitViewController *) viewController;
             viewController = svc.viewControllers.lastObject;
-        } else  {
+        } else {
             return viewController;
         }
     }
@@ -465,7 +479,7 @@ static NSString *MCRURLGlobalScheme = nil;
         NSMutableDictionary *dic = @{}.mutableCopy;
         NSString *query = URL.query;
         NSArray<NSString *> *queryStrs = [query componentsSeparatedByString:@"&"];
-        [queryStrs enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [queryStrs enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
             NSArray *keyValue = [obj componentsSeparatedByString:@"="];
             if (keyValue.count >= 2) {
                 NSString *key = keyValue[0];
@@ -508,12 +522,12 @@ static NSString *MCRURLGlobalScheme = nil;
     }
     NSMutableDictionary<NSString *, id> *params = URLParams.mutableCopy;
     NSArray<NSString *> *funcParamKeys = funcParams.allKeys;
-    [funcParamKeys enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [funcParamKeys enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
         [params setObject:funcParams[obj] forKey:obj];
     }];
     if (mClass) {
         NSArray<NSString *> *paramKeys = params.allKeys;
-        [paramKeys enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [paramKeys enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
             objc_property_t prop = class_getProperty(mClass, obj.UTF8String);
             if (!prop) {
                 [params removeObjectForKey:obj];
@@ -526,9 +540,8 @@ static NSString *MCRURLGlobalScheme = nil;
                     if ([propClass isSubclassOfClass:[NSString class]] && [params[obj] isKindOfClass:[NSNumber class]]) {
                         [params setObject:[NSString stringWithFormat:@"%@", params[obj]] forKey:obj];
                     } else if ([propClass isSubclassOfClass:[NSNumber class]] && [params[obj] isKindOfClass:[NSString class]]) {
-                        [params setObject:@(((NSString *)params[obj]).doubleValue) forKey:obj];
+                        [params setObject:@(((NSString *) params[obj]).doubleValue) forKey:obj];
                     }
-                    
                 }
             }
         }];
@@ -541,7 +554,7 @@ static NSString *MCRURLGlobalScheme = nil;
     if (!object) {
         return;
     }
-    [propertys enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+    [propertys enumerateKeysAndObjectsUsingBlock:^(NSString *_Nonnull key, id _Nonnull obj, BOOL *_Nonnull stop) {
         [object setValue:obj forKey:key];
     }];
 }
@@ -555,11 +568,13 @@ static NSString *MCRURLGlobalScheme = nil;
             [currentViewController.navigationController pushViewController:viewController animated:animate];
             break;
         case MCRViewControlerEnterModeModal:
-            [currentViewController presentViewController:viewController animated:animate completion:^{
-                
-            }];
+            [currentViewController presentViewController:viewController
+                                                animated:animate
+                                              completion:^{
+
+                                              }];
             break;
-            
+
         default:
             break;
     }
@@ -568,14 +583,18 @@ static NSString *MCRURLGlobalScheme = nil;
 + (id)safePerformAction:(SEL)action
               forTarget:(NSObject *)target
              withParams:(NSDictionary *)params {
-    NSMethodSignature * sig = [target methodSignatureForSelector:action];
-    if (!sig) { return nil; }
+    NSMethodSignature *sig = [target methodSignatureForSelector:action];
+    if (!sig) {
+        return nil;
+    }
     NSInvocation *inv = [NSInvocation invocationWithMethodSignature:sig];
-    if (!inv) { return nil; }
+    if (!inv) {
+        return nil;
+    }
     [inv setTarget:target];
     [inv setSelector:action];
     NSArray<NSString *> *keys = params.allKeys;
-    keys = [keys sortedArrayUsingComparator:^NSComparisonResult(NSString *  _Nonnull obj1, NSString *  _Nonnull obj2) {
+    keys = [keys sortedArrayUsingComparator:^NSComparisonResult(NSString *_Nonnull obj1, NSString *_Nonnull obj2) {
         if (obj1.integerValue < obj2.integerValue) {
             return NSOrderedAscending;
         } else if (obj1.integerValue == obj2.integerValue) {
@@ -584,14 +603,12 @@ static NSString *MCRURLGlobalScheme = nil;
             return NSOrderedDescending;
         }
     }];
-    [keys enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [keys enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
         id value = params[obj];
-        [inv setArgument:&value atIndex:idx+2];
+        [inv setArgument:&value atIndex:idx + 2];
     }];
     [inv invoke];
     return [NSObject bh_getReturnFromInv:inv withSig:sig];
 }
 
 @end
-
-

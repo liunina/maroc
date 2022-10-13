@@ -1,10 +1,10 @@
-#import <Foundation/Foundation.h>
-#import "MCModuleProtocol.h"
 #import "MCContext.h"
-#import "MarocAppDelegate.h"
 #import "MCModuleManager.h"
-#import "MCServiceManager.h"
+#import "MCModuleProtocol.h"
 #import "MCRouter.h"
+#import "MCServiceManager.h"
+#import "MarocAppDelegate.h"
+#import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 动态注册模块
 /// @param moduleClass 模块实现类
-+ (void)registerDynamicModule:(Class) moduleClass;
++ (void)registerDynamicModule:(Class)moduleClass;
 
 /// 根据协议创建(调用)服务
 /// @param proto 协议
@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 出发自定义事件
 /// @param eventType 事件类型
 + (void)triggerCustomEvent:(NSInteger)eventType;
-    
+
 @end
 
 NS_ASSUME_NONNULL_END

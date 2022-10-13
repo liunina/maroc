@@ -4,7 +4,7 @@
 
 @interface MCServiceManager : NSObject
 
-@property (nonatomic, assign) BOOL  enableException;
+@property (nonatomic, assign) BOOL enableException;
 
 + (instancetype)sharedManager;
 

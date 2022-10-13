@@ -11,7 +11,7 @@ static NSString *const MCRURLQueryParamsKey = @"params";
 static NSString *const MCRURLFragmentViewControlerEnterModePush = @"push";
 static NSString *const MCRURLFragmentViewControlerEnterModeModal = @"modal";
 
-typedef void(^MCRPathComponentCustomHandler)(Protocol *proto, _Nullable SEL selector, NSDictionary<NSString *, id> *params);
+typedef void (^MCRPathComponentCustomHandler)(Protocol *proto, _Nullable SEL selector, NSDictionary<NSString *, id> *params);
 
 @interface MCRouter : NSObject
 
@@ -43,7 +43,7 @@ typedef void(^MCRPathComponentCustomHandler)(Protocol *proto, _Nullable SEL sele
      withParams:(nullable NSDictionary<NSString *, NSDictionary<NSString *, id> *> *)params;
 + (BOOL)openURL:(NSURL *)URL
      withParams:(nullable NSDictionary<NSString *, NSDictionary<NSString *, id> *> *)params
-        andThen:(nullable void(^)(NSString *pathComponentKey, id obj, id returnValue))then;
+        andThen:(nullable void (^)(NSString *pathComponentKey, id obj, id returnValue))then;
 
 + (id)safePerformAction:(SEL)action
               forTarget:(NSObject *)target

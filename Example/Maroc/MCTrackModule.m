@@ -7,13 +7,13 @@
 //
 
 #import "MCTrackModule.h"
-#import <Maroc/Maroc.h>
-#import "MCTrackServiceProtocol.h"
 #import "MCTrackService.h"
+#import "MCTrackServiceProtocol.h"
+#import <Maroc/Maroc.h>
 
-
-@interface MCTrackModule ()<MCModuleProtocol>
+@interface MCTrackModule () <MCModuleProtocol>
 @end
+
 @implementation MCTrackModule
 
 /// 自定义静态注册
@@ -35,7 +35,6 @@
 
 - (void)modInit:(MCContext *)context {
     [[Maroc shareInstance] registerService:@protocol(MCTrackServiceProtocol) service:[MCTrackService class]];
-
 }
 
 - (NSInteger)modulePriority {

@@ -4,7 +4,7 @@
 
 // Debug Logging
 #ifdef DEBUG
-#define MCLog(x, ...) NSLog(x, ## __VA_ARGS__);
+#define MCLog(x, ...) NSLog(x, ##__VA_ARGS__);
 #else
 #define MCLog(x, ...)
 #endif

@@ -9,9 +9,10 @@
 #import "MCHomeModule.h"
 #import <Maroc/Maroc.h>
 
-@interface MCHomeModule ()<MCModuleProtocol>
+@interface MCHomeModule () <MCModuleProtocol>
 
 @end
+
 @implementation MCHomeModule
 
 - (void)modSetUp:(MCContext *)context {
@@ -19,7 +20,6 @@
 }
 
 - (void)modInit:(MCContext *)context {
-    
 }
 
 @end

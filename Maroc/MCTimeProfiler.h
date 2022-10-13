@@ -3,7 +3,7 @@
 @interface MCTimeProfiler : NSObject
 
 #define kTimeProfilerResultNotificationName @"MCTimeProfilerResult"
-#define kNotificationUserInfoKey            @"logArray"
+#define kNotificationUserInfoKey @"logArray"
 
 + (MCTimeProfiler *)sharedTimeProfiler;
 

@@ -11,7 +11,7 @@
 @implementation MCOrderService
 
 - (NSInteger)createOrderByProductName:(NSString *)productName {
-    NSLog(@"MCOrderService-createOrderByProductName:%@",productName);
+    NSLog(@"MCOrderService-createOrderByProductName:%@", productName);
     return 101;
 }
 @end
